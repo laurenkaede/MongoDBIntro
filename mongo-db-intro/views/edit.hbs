@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
+<body>
+       <form action="/edit/{{data._id}}/success?_method=PUT" method="POST">
+        <label for="form_user_name">Name:</label>
+        <input type="text" name="form_user_name" value="{{data.name}}">
+
+        <label for="form_user_email">Email:</label>
+        <input type="email" name="form_user_email" {{data.email}}>
+
+        <label for="form_user_password">Password:</label>
+        <input type="password" name="form_user_password" value="{{data.password}}">
+
+        <label for="form_user_age">Age:</label>
+        <input type="number" name="form_user_age" value="{{data.age}}">
+
+        <button type="submit">Update User</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+ {{#each data }}
+        <div>
+            <h2>Name:</h2>
+            <h4>{{this.name}}</h4>
+
+            <h2>Email:</h2>
+            <h4>{{this.email}}</h4>
+            <form action="/edit/{{this._id}}?_method=PUT" method="POST">
+                <button type="submit">Edit User</button>
+            </form>
+            <form action="/delete/{{this._id}}?_method=DELETE" method="POST">
+                <button type="submit">Delete User</button>
+            </form>
+        </div>
+    {{/each}}
+</body>
+</html>
